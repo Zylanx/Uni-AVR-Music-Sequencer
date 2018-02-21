@@ -323,7 +323,7 @@ ASALocalRun/
 *.binlog
 
 # Zylanx: Get rid of a few extra things
-*.vcxproj
-*.vcxproj,filters
-*.sln
-/__vm/*
+**/*.vcxproj
+**/*.vcxproj.filters
+**/*.sln
+**/__vm/*

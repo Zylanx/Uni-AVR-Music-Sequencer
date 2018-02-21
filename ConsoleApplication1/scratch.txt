@@ -1,0 +1,31 @@
+// ConsoleApplication1.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdint.h>
+
+const uint8_t test1 = 23;
+
+typedef struct BeatTime {
+	uint8_t subBeat : 2;
+	uint8_t beat : 6;
+} beatTime_t;
+
+typedef union {
+	beatTime_t beatStruct;
+	uint8_t intRep;
+} beatTimeUnion_t;
+
+int main()
+{
+	printf("%zu\n", sizeof(test1));
+	printf("%zu\n", sizeof(beatTime_t));
+	beatTimeUnion_t test = {0, 0};
+	printf("%zu\n", sizeof(test));
+	memcpy(&test, &test1, 1);
+	printf("%zu\n", sizeof(test));
+	printf("%i\n", test.intRep);
+	printf("%i\n%i\n", test.beatStruct.subBeat, test.beatStruct.beat);
+	return 0;
+}
+
