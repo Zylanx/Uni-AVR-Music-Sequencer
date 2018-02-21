@@ -321,3 +321,9 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+# Zylanx: Get rid of a few extra things
+*.vcxproj
+*.vcxproj,filters
+*.sln
+/__vm/*
